@@ -103,10 +103,10 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
           );
         }
-        return ListView.builder(
-          physics: BouncingScrollPhysics(),
-          padding: EdgeInsets.all(20),
+        return GridView.builder(
           itemCount: snap.data.length,
+          gridDelegate:
+              new SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
           itemBuilder: (context, index) {
             Memo memo = snap.data[index];
             return InkWell(
